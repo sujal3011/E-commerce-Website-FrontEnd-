@@ -1,0 +1,890 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'League Spartan', sans-serif;
+    box-sizing: border-box;
+
+
+}
+
+
+  /*  header section   */
+#header{
+    display: flex;
+    align-items: center; /*aligns along the cross axis*/ 
+    justify-content: space-between; /*aligns along the main axis*/
+    padding: 2px 10px;
+    background-color: lightgray;
+    box-shadow: 3px 3px 8px rgb(126, 106, 106);
+    position: sticky;  /*making the position of the header sticky*/
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li{
+    list-style: none;  /*removing the bullets*/
+    padding: 0px 30px;
+    position: relative;  /*imp to make its position-relative so that the after property works properly*/
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    color: rgb(32, 9, 32);
+    transition: all 0.2s ease-out;  /*adding transition effect so that the color change upon hover occurs smoothly*/
+}
+
+#navbar li a:hover,
+#navbar li a.active{
+    color: rgb(189, 69, 189);
+}
+
+
+#navbar li a.active::after,
+#navbar li a:hover::after{
+    content: "";
+    width: 40%;
+    height: 2px;
+    background-color: rgb(32, 9, 32);
+    position: absolute;
+    top: 16px;
+    left: 29px
+}
+#mobile{
+    display: none;  /*initially the hamburger menu is not visible,it will only be visible in the media query*/
+    padding-right: 10px;
+}
+#closebar{
+    display: none;  /*we want the close button to be displayed only in the mobile view*/
+}
+
+/*   Home Page  */
+#hero{
+    background-image: url("img/hero4.png");
+    width: 100%;
+    height: 100vh;  /*viewport height*/
+    background-size: cover;  /*Scales the image (while preserving its ratio) to the smallest possible size to fill the container (that is: both its height and width completely cover the container), leaving no empty space.*/
+    background-position: top 25% right 0;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /*since the flex-direction is column the vertical axis is now the main axis and the horixontal axis is the cross axis*/
+
+    align-items: flex-start;  /*align-items: flex-start, which means the items are all aligned to the start of the cross axis.*/
+
+}
+#hero h4{
+    padding-bottom: 11px;
+    font-size: 20px;
+
+}
+#hero h2{
+    color: rgb(12, 66, 66);
+    font-size: 30px;
+    padding-bottom: 11px;
+}
+#hero h1{
+    color: darkgreen;
+    font-size: 50px;
+    padding-bottom: 9px;
+}
+#hero p{
+    padding-bottom: 18px;
+}
+#hero button{
+    background-image: url("img/button.png");
+    background-color: transparent;  /*important*/
+    padding: 20px 80px;
+    background-repeat: no-repeat;
+    color: rgb(53, 71, 22);
+    border: 0;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bolder;
+
+}
+
+.section-p1{
+    padding: 22px 20px;
+}
+.section-m1{
+    margin: 40px 0px;
+}
+
+button.normal{
+    background-color: rgb(194, 240, 225);
+    color: black;
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.1s;
+}
+
+button.white{
+    background-color: transparent;  /*important*/
+    color: black;
+    font-size: 15px;
+    font-weight: bolder;
+    padding: 9px;
+    border-radius: 0px;
+    cursor: pointer;
+    border: 2px solid white;
+    outline: none;
+    transition: 0.1s;
+}
+
+
+#feature{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;  /*to make it responsive*/
+}
+
+#feature .fe-box{
+    border: 1px solid rgb(85, 107, 46);
+    box-shadow: 2px 2px 5px darkolivegreen;
+    width: 155px;
+    padding: 20px 0px;
+    text-align: center;
+    border-radius: 16px;
+}
+
+#feature .fe-box:hover{
+    box-shadow: 1px 1px 8px rgb(60, 71, 41);
+}
+#feature .fe-box h5{
+    background-color: pink;
+    color: rgb(53, 20, 83);
+    line-height: 2;
+    display: inline-block;
+    padding: 1px 5px;
+    border-radius: 5px;
+}
+#feature .fe-box img{
+    width: 100%;  /*100% with respect to its containing block*/
+}
+
+#feature .fe-box:nth-child(2) h5{  /*important*/
+    background-color: lightgreen;
+
+}
+#feature .fe-box:nth-child(3) h5{
+    background-color: lightblue;
+    
+}
+#feature .fe-box:nth-child(4) h5{
+    background-color: lightsalmon;
+    
+}
+#feature .fe-box:nth-child(5) h5{
+    background-color: rgb(142, 188, 233);
+    
+}
+#feature .fe-box:nth-child(6) h5{
+    background-color: rgb(233, 233, 89);
+    
+}
+#product1{
+    text-align: center;
+
+}
+#product1 .pro-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+#product1 .pro{
+    width: 20%;
+    border: 1px solid lightseagreen;
+    padding: 10px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 4px 1px 11px rgb(196, 156, 233);
+    transition: 00.2s ease-in-out;
+    margin: 20px;
+    position: relative; /*very important--->if we make the position of a child element absolute then we have to make sure to make the position of the parent element relative(otherwise the child element will position itself with respect to the body element instead of its direct parent */
+}
+#product1 .pro img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+#product1 .pro:hover{
+    box-shadow: 4px 1px 11px rgb(102, 129, 127);
+
+}
+#product1 .pro .des{
+    /* position: relative; */
+    text-align: start;
+    padding: 5px;
+}
+#product1 .pro .des span{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(72, 105, 23);
+}
+#product1 .pro .des h5{
+    padding: 5px 0px;
+    font-size: 15px;
+    font-weight:bolder;
+    color: rgb(22, 63, 63);
+}
+#product1 .pro .des i{
+    color: rgb(241, 238, 30);
+}
+#product1 .pro .des h4{
+    padding: 6px 0px;
+    font-size: 20px;
+    color: rgb(17, 43, 17);
+}
+#product1 .pro .cart{
+    width: 30px;
+    height: 20px;
+    padding: 12px 5px 23px 4px;
+    background-color: rgb(156, 231, 206);
+    border-radius: 25px;
+    color: rgb(20, 58, 58);
+    position: absolute;
+    right: 25px;
+    bottom: 13px;
+}
+
+#banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url("img/banner/b2.jpg");
+    width: 100%;
+    height: 50vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+#banner h4{
+    color: white;
+    font-size: 23px;
+}
+#banner h2{
+    color: yellow;
+    font-size: 30px;
+    padding: 10px 0px;
+}
+#banner h2 span{
+    color: red;
+}
+#banner button:hover{
+    background-color: rgb(39, 85, 39);
+    color: white;
+}
+#sm-banner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#sm-banner .banner-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background-image: url("img/banner/b17.jpg");
+    min-width: 48%;
+    height: 70vh;
+    margin: 0px 9px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    padding: 20px;
+}
+#sm-banner .banner-box2{
+    background-image: url("img/banner/b10.jpg");
+}
+#sm-banner h4{
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+    padding-bottom: 8px;
+}
+#sm-banner h2{
+    font-size: 40px;
+    color: black;
+    font-weight: 900;
+    padding-bottom: 8px;
+}
+#sm-banner span{
+    font-size: 17px;
+    color: orangered;
+    font-weight: 600;
+    padding-bottom: 10px;
+
+}
+
+#sm-banner .banner-box:hover button{
+    background-color: rgb(241, 177, 13);
+    border: 2px solid orange;
+}
+
+#banner3{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 23px 0px;
+}
+
+#banner3 .banner-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background-image: url("img/banner/b7.jpg");
+    min-width: 28%;  /*if we specify width as 30% then it will only occupy that much but if we give min-width as 30 % then it will adjust its size depending on how many other elements in its parent element,which means that its width can be >=30% */
+    height: 50vh;
+    margin: 0px 28px;
+    /* margin-left: 14px; */
+    margin-bottom: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    padding: 20px;
+}
+#banner3 h4{
+    color: white;
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+#banner3 h2{
+    color: red;
+    font-size: 20px;
+}
+#banner3 .banner-box2{
+    background-image: url("img/banner/b4.jpg");
+}
+#banner3 .banner-box3{
+    background-image: url("img/banner/b18.jpg");
+}
+#newsletter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 37vh;
+    background-image: url("img/banner/b14.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: darkslategray;
+}
+#newsletter h4{
+    font-size: 20px;
+    font-weight: 800;
+    color: yellow;
+    padding-bottom: 10px;
+}
+#newsletter p{
+    font-size: 18px;
+    font-weight: 800;
+    color: black;
+}
+#newsletter span{
+    color: yellowgreen;
+}
+#newsletter .form{
+    display: flex;
+    width: 40%;
+}
+
+#newsletter input{
+    font-size: 17px;
+    width: 100%;  /*important*/
+    padding: 12px 13px;
+    border: 1px solid transparent;  /*important-->border:transparent*/
+    border-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;  /*important*/
+}
+#newsletter button{
+    background-color:rgb(59, 73, 34);
+    color: rgb(238, 238, 116);
+    width: 30%;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;  /*important*/
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+footer .logo{
+    margin-bottom: 15px;
+}
+footer h4{
+    font-size: 24px;
+    padding: 9px 0px;
+}
+footer p{
+    font-size: 15px;
+    padding: 5px 0px;
+}
+footer a{
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    padding: 3px 0px;
+}
+footer i{
+    padding-right: 5px;
+    color: darkslategray;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+footer .install .row img{
+    border: 1px solid darkslategrey;
+    border-radius: 5px;
+    margin: 3px 0px 3px 0px;
+}
+footer .install img{
+    padding: 3px 3px;
+}
+footer .install{
+    margin-top: 49px;
+}
+footer .copyright{
+    width: 100%;
+    text-align: center;
+}
+
+/*shop page*/
+
+#page-header{
+    background-image: url('img/banner/b1.jpg');
+    width: 100%;
+    height: 70vh;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+#page-header h6{
+    color: white;
+    font-size: 50px;
+}
+#page-header p{
+    color: white;
+    font-size: 30px;
+}
+#pagination{
+    text-align: center;
+}
+#pagination a{
+    text-decoration: none;
+    background-color: darkgreen;
+    padding: 16px 19px;
+    font-weight: 600;  /*sets the boldness of the text*/
+    border-radius: 2px;
+    color: yellow;
+}
+
+/*sproduct page*/
+
+#prodetails{
+    display: flex;
+    margin-top: 20px;
+}
+#prodetails .single-pro-image{
+    width: 40%;
+    margin-right: 50px;
+}
+#prodetails .small-img-group{
+    display: flex;
+    justify-content: space-between;
+}
+#prodetails .small-img-col{
+    flex-basis: 98px; /*The flex-basis CSS property sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing.*/
+    cursor: pointer;
+}
+#prodetails .single-pro-details{
+    width: 50%;
+    padding-top:20px ;
+}
+#prodetails .single-pro-details h5{
+    font-size: 25px;
+    padding:11px 0px 7px 0px;
+}
+#prodetails .single-pro-details h3{
+    padding-bottom: 9px;
+}
+#prodetails .single-pro-details h2{
+    padding-bottom: 5px;
+}
+#prodetails .single-pro-details select{
+    display: block;
+    padding: 5px 5px;
+    margin-bottom: 9px;
+}
+#prodetails .single-pro-details input{
+    font-size: 18px;
+    padding-left: 6px;
+    width: 11%;
+    height: 32px;
+    margin-right: 5px;
+}
+#prodetails .single-pro-details input:focus{  /*important*/
+    outline: none;  /* to remove the outline from the input box*/
+}
+#prodetails .single-pro-details button{
+    background-color: darkgreen;
+    color: white;
+    padding: 9px 16px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+#prodetails .single-pro-details p{
+    line-height: 20px;  /*important*/
+}
+
+/*Blog Page*/
+
+#page-header.blog-header{  /*important--->we want all the properties of the page header and we are only modifying the blog-header*/
+    background-image: url("img/banner/b19.jpg");
+}
+
+#blog{
+    padding: 100px 79px 0px 77px;
+}
+#blog .blog-box{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-bottom: 65px;
+}
+#blog .blog-img{
+    width: 50%;
+    margin-right: 25px;
+}
+#blog img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;  /*important*/
+}
+#blog .blog-details{
+    width: 50%;
+}
+#blog .blog-details h3{
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+#blog .blog-details p{
+    line-height: 22px;
+    margin-bottom: 20px;
+}
+#blog .blog-details a{
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    position: relative;
+    transition: 0.3s;
+}
+#blog .blog-details a::after{
+    content: "";
+    width: 63px;
+    height: 1.5px;
+    background-color: black;
+    position: absolute;
+    top: 10px;
+    left: 146px;
+}
+#blog .blog-details a:hover{
+    color: rgb(57, 73, 30);
+}
+#blog .blog-details a:hover::after{
+    background-color:rgb(57, 73, 30);
+}
+#blog .blog-box h1{
+    position: absolute;
+    top: -38px;
+    left: 0px;
+    font-size: 63px;
+    font-weight: 900;
+    color: grey;
+    z-index:-5; /*important*/
+}
+
+/*About Page*/
+#page-header.about-header{
+    background-image: url("img/about/banner.png");
+}
+#about-head{
+    display: flex;
+    align-items: center;
+    padding: 50px 20px;
+}
+#about-head img{
+    width: 50%;
+    height: auto;
+    margin-right: 20px;
+}
+#about-head div{
+    width: 50%;
+}
+#about-head h2{
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+#about-head div p{
+    line-height: 20px;
+    margin-bottom: 30px;
+
+}
+#about-app h1{
+    text-align: center;
+    font-size: 45px;
+    font-weight: 900;
+    
+}
+#about-app .video{
+    width: 70%;
+    height: 100%;
+    margin: 10px auto 0px auto;  /*to centre the video we made left and right margin as auto*/
+}
+#about-app .video video{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+/*Media Queries*/
+
+
+@media (max-width:789px) {
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;  /*important*/
+        top: 0px;
+        right: -300px;  /*since the width of the navbar is 300px,if we make right:-300px it will hide the navabar*/
+        height: 100vh;
+        width: 300px;
+        background-color: rgb(196, 229, 240);
+        box-shadow: 10px 10px 5px lightskyblue;
+        padding: 50px 10px;
+        transition: 0.3s;
+    }
+    #navbar.active{
+        right: 0px;
+    }
+    #navbar li{
+        margin-bottom: 30px;
+    }
+    #mobile{
+        display: flex;
+        align-items: center;
+        padding-right: 10px;
+    }
+    #mobile i{
+        padding-left: 10px;
+        font-size: 20px;
+        color: black;
+    }
+    #closebar{
+        display: initial; /*applies the default(initial) property*/
+        position: absolute;
+        top: 19px;
+        left: 41px;
+        color: black;
+    }
+    #lg-bag{
+        display: none;
+    }
+    #hero {
+        height: 70vh;
+        background-position: top 25% right 20%;  /*important-->moving the background image 20% to the right of its original poistion*/
+        padding: 20px 20px;
+    }
+    #feature {
+        justify-content:center;
+    }
+    #feature .fe-box {
+        margin: 20px;
+    }
+    #product1 .pro-container {
+        justify-content: center;
+        margin: 0px 20px;
+    }
+    #product1 .pro {
+       margin: 16px;
+       width: 40%;
+    }
+    #banner {
+        height: 30vh;
+    }
+    #sm-banner {
+        justify-content: center;
+    }
+    #sm-banner .banner-box {
+        min-width: 100%;
+        height: 40vh;
+    }
+    #banner3 {
+        justify-content: center;
+    }
+    #banner3 .banner-box {
+        width: 31%;
+        height: 30vh;
+        margin: 0px 7px;
+    }
+    #newsletter {
+        height: 25vh;
+        justify-content: center;
+    }
+    #newsletter .form {
+        width: 60%;
+    }
+    
+
+}
+@media (max-width:477px) {
+    #hero {
+        height: 70vh;
+        background-position: top 25% right 26%;
+        padding: 20px 5px;
+    }
+    #feature .fe-box {
+        margin: 13px;
+    }
+    #product1 .pro-container {
+        padding: 0px;
+    }
+    #product1 .pro {
+        margin: 10px;
+        width: 100%;
+    }
+    #sm-banner .banner-box2 {
+        margin-top: 20px;
+       
+    }
+    #banner3 {
+        padding: 10px;
+    }
+    #banner3 .banner-box {
+        width: 100%;
+        height: 30vh;
+        margin: 5px 0px;
+        
+    }
+    #newsletter {
+        height: 25vh;
+        padding: 26px;
+    }
+    #newsletter .form {
+        width: 100%;
+        padding: 10px;
+    }
+    #newsletter h4 {
+        font-size: 31px;
+        padding: 10px;
+    }
+    #newsletter p {
+        font-size: 23px;
+        padding: 10px;
+    }
+    footer p {
+        font-size: 18px;
+    }
+    /*sproduct page*/
+    #prodetails{
+        flex-direction: column;
+        /* justify-content: center;
+        align-items: center; */
+    }
+    #prodetails .single-pro-image {
+        width: 100%;
+    }
+    #prodetails .single-pro-details {
+        width: 100%;
+        padding-top: 20px;
+    }
+    #blog {
+        padding: 88px 12px 0px 12px;
+    }
+    #blog .blog-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #blog .blog-img {
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+    #blog .blog-details {
+        width: 100%;
+    }
+    #newsletter {
+        height: 35vh;
+        padding: 26px;
+    }
+    #about-head {
+        flex-direction: column;
+        padding-top: 27px;
+    }
+    #about-head img {
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 22px;
+    }
+    #about-head div {
+        width: 100%;
+        font-size: 24px;
+    }
+    #about-head div p {
+        line-height: 27px;
+    }
+    #about-app .video {
+        width: 100%;
+    }
+
+
+}
+
+
+
+
