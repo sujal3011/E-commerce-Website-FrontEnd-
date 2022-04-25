@@ -690,6 +690,105 @@ footer .copyright{
     border-radius: 20px;
 }
 
+/*contact Page*/
+
+#contact-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#contact-details .details{
+    width: 35%;
+}
+#contact-details .details span{
+    font-size: 20px;
+}
+#contact-details .details h2{
+    font-size: 28px;
+    line-height: 25px;
+    padding: 18px 0px;
+}
+#contact-details .details h3{
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+#contact-details .details li{
+    list-style: none;
+    display: flex;
+    padding: 12px 0px; 
+}
+#contact-details .details li i{
+    padding-right: 6px;
+}
+#contact-details .details li p{
+    margin: 0;
+}
+#contact-details .map{
+    width: 60%;
+    height: 300px;
+}
+#contact-details .map iframe{
+    width: 100%;
+    height: 100%;
+}
+#form-details {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    margin: 30px;
+    padding: 20px;
+}
+#form-details form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+}
+#form-details form span{
+    font-size: 17px;
+    padding-bottom: 10px;
+}
+#form-details form h2{
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+#form-details form input,
+#form-details form textarea {
+    margin-bottom: 23px;
+    padding: 13px;
+    font-size: 15px;
+    outline: none;
+}
+#form-details form button {
+    width: 35%;
+    background-color: rgb(27, 141, 27);
+    color: black;
+    border-radius: 10px;
+    font-weight: 900;
+    padding: 10px;
+    font-size: 19px;
+}
+#form-details .people{
+    margin: 20px 20px;
+}
+#form-details .people div{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    align-items: center;
+}
+#form-details .people div p{
+    margin-left: 25px;
+    line-height: 29px;
+}
+#form-details .people div p span{
+    display: block;
+    font-size: 20px;
+    font-weight: 900;
+}
+#form-details .people div img{
+    object-fit: cover;
+}
 /*Media Queries*/
 
 
@@ -783,6 +882,9 @@ footer .copyright{
 
 }
 @media (max-width:477px) {
+    #page-header{
+        height: 55vh;
+    }
     #hero {
         height: 70vh;
         background-position: top 25% right 26%;
@@ -880,6 +982,29 @@ footer .copyright{
     }
     #about-app .video {
         width: 100%;
+    }
+    /*Contact Page*/
+    #contact-details {
+        display: flex;
+        flex-direction: column;
+    }
+    #contact-details .details {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    #contact-details .map {
+        width: 100%;
+    }
+    #form-details {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+    }
+    #form-details form {
+        width: 100%;
+    }
+    #form-details .people {
+        margin: 10px 0px;
     }
 
 
