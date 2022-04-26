@@ -789,10 +789,116 @@ footer .copyright{
 #form-details .people div img{
     object-fit: cover;
 }
+
+/*cart Page*/
+
+#cart{
+    overflow-x:auto ;  /*important---->provides a scrollbar if the content overflows*/
+}
+#cart table {  /*important(styling of table)*/
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+#cart table td:nth-child(1){
+    width: 100px;
+    text-align: center;
+}
+#cart table td:nth-child(2){
+    width: 140px;
+    text-align: center;
+}
+#cart table td:nth-child(3){
+    width: 285px;
+    text-align: center;
+}
+#cart table td:nth-child(4),
+#cart table td:nth-child(5),
+#cart table td:nth-child(6)
+{
+    width: 140px;
+    text-align: center;
+}
+#cart table img{
+    width: 55px;
+}
+#cart table input{
+    width: 37px;
+    padding: 5px;
+}
+#cart table thead{
+    border: 1px solid darkolivegreen;
+    border-left: none;
+    border-right: none;
+}
+#cart table thead td {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px 0px;
+    text-transform: uppercase; /*important*/
+}
+
+#cart table tbody tr td{
+    padding-top: 15px;
+}
+
+#cart-add{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#coupon{
+    width: 50%;
+}
+#coupon h3{
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+#cart-add input{
+    width: 60%;
+    margin-right: 10px;
+    font-size: 15px;
+    padding: 7px 10px;
+    outline: none;
+    border: 1px solid darkolivegreen;
+}
+#coupon button,
+#total button {
+    background-color: rgb(131, 185, 37);
+}
+#total {
+    width: 50%;
+    border: 1px solid darkolivegreen;
+    padding: 30px;
+}
+#total table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 15px;
+}
+#total h3 {
+    font-size: 23px;
+    margin-bottom: 10px;
+    color: darkgreen;
+}
+#total table td {
+    width: 50%;
+    font-size: 20px;
+    padding: 10px 15px;
+    border: 1px solid darkgray;
+}
+
+
+
 /*Media Queries*/
 
 
 @media (max-width:789px) {
+    #page-header{
+        height: 50vh;
+    }
     #navbar {
         display: flex;
         flex-direction: column;
@@ -878,6 +984,7 @@ footer .copyright{
     #newsletter .form {
         width: 60%;
     }
+
     
 
 }
@@ -1005,6 +1112,20 @@ footer .copyright{
     }
     #form-details .people {
         margin: 10px 0px;
+    }
+    #cart-add {
+        flex-direction: column;
+        
+    }
+    #coupon {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    #cart-add input {
+        width: 76%;
+    }
+    #total {
+        width: 100%;
     }
 
 
